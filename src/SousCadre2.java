@@ -5,7 +5,7 @@ public class SousCadre2 extends JPanel {
     private int[] tableau;
     private int debut;
     private int fin;
-    private AlgorithmesTri algorithmesTri;
+    private TriAlgorithm triAlgorithm;
 
     public SousCadre2() {
         // Initialiser l'interface utilisateur
@@ -26,8 +26,8 @@ public class SousCadre2 extends JPanel {
         repaint();
     }
 
-    public void setAlgorithmesTri(AlgorithmesTri algorithmesTri) {
-        this.algorithmesTri = algorithmesTri;
+    public void setTriAlgorithm(TriAlgorithm triAlgorithm) {
+        this.triAlgorithm = triAlgorithm;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class SousCadre2 extends JPanel {
                 int y = 0; // Placer les cadres en haut
 
                 // Surbrillance jaune pour l'indice actuel
-                if (algorithmesTri != null && i == algorithmesTri.getCurrentIndex()) {
+                if (triAlgorithm != null && i == triAlgorithm.getCurrentIndex()) {
                     g.setColor(Color.YELLOW);
                 } else {
                     g.setColor(Color.WHITE);

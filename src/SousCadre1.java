@@ -28,7 +28,7 @@ public class SousCadre1 extends JPanel {
         setBackground(new Color(251, 204, 231)); // Code couleur RGB pour un rose bébé
 
         // Composant pour sélectionner l'algorithme de tri
-        String[] algorithmes = {"Bubble Sort", "Selection Sort", "Insertion Sort", "Cocktail Shaker Sort", "Shell Sort"};
+        String[] algorithmes = {"Tri à Bulles", "Tri par Séléction", "Tri par Insertion", "Tri Cocktail", "Tri de Shell"};
         comboBoxAlgorithmes = new JComboBox<>(algorithmes);
         comboBoxAlgorithmes.setPreferredSize(new Dimension(150, 30));
         add(comboBoxAlgorithmes);
@@ -36,23 +36,19 @@ public class SousCadre1 extends JPanel {
         // Spinner pour définir les indices de début
         SpinnerModel modelDebut = new SpinnerNumberModel(0, 0, 14, 1);
         spinnerDebut = new JSpinner(modelDebut);
-        spinnerDebut.setPreferredSize(new Dimension(60, 30));
         add(spinnerDebut);
 
         // Spinner pour définir les indices de fin
         SpinnerModel modelFin = new SpinnerNumberModel(14, 0, 14, 1);
         spinnerFin = new JSpinner(modelFin);
-        spinnerFin.setPreferredSize(new Dimension(60, 30));
         add(spinnerFin);
 
         // Bouton pour lancer le tri
         boutonTrier = new JButton("Trier");
-        boutonTrier.setPreferredSize(new Dimension(100, 30));
         add(boutonTrier);
 
         // Bouton pour réinitialiser le tableau
         boutonReinitialiser = new JButton("Réinitialiser");
-        boutonReinitialiser.setPreferredSize(new Dimension(100, 30));
         add(boutonReinitialiser);
 
         // Action listener pour le bouton Trier

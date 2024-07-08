@@ -15,28 +15,30 @@ public class TriReel implements Runnable {
 
     @Override
     public void run() {
-        AlgorithmesTri tri = new AlgorithmesTri(tableau, debut, fin, sousCadre2);
-        sousCadre2.setAlgorithmesTri(tri);
-
-        // Mettre à jour le tableau dans SousCadre2 avant de lancer le tri
-        sousCadre2.setTableau(tableau, debut, fin);
-
+        TriAlgorithm triAlgorithm = null;
         switch (algorithme) {
             case "Bubble Sort":
-                tri.triBulles();
+                triAlgorithm = new TriBulles(sousCadre2);
                 break;
             case "Selection Sort":
-                tri.triSelection();
+                triAlgorithm = new TriSelection(sousCadre2);
                 break;
             case "Insertion Sort":
-                tri.triInsertion();
+                triAlgorithm = new TriInsertion(sousCadre2);
                 break;
             case "Cocktail Shaker Sort":
-                tri.triCocktail();
+                triAlgorithm = new TriCocktail(sousCadre2);
                 break;
             case "Shell Sort":
-                tri.triShell();
+                triAlgorithm = new TriShell(sousCadre2);
                 break;
+        }
+
+        sousCadre2.setTriAlgorithm(triAlgorithm);
+        sousCadre2.setTableau(tableau, debut, fin);
+
+        if (triAlgorithm != null) {
+            triAlgorithm.sort(tableau, debut, fin);
         }
     }
 }
